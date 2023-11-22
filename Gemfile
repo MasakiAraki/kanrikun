@@ -15,6 +15,8 @@ gem "bootsnap", require: false
 gem "sass-rails"
 gem 'materialize-sass'
 gem 'material_icons' 
+gem 'slim-rails'
+gem 'html2slim'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
