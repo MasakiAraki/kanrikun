@@ -1,6 +1,11 @@
 .container
   h2 Users
-  hr
-  p
-    strong e-mail
-    = @user.email
+  table
+    tbody
+      tr
+        td.bold Name
+        td = full_name(@user)
+      tr
+        td Email
+        td = @user.email
+  
