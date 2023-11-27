@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-11-27T05:41:15.780Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="9Wa_nBFV3SwJNLXQm0fM" version="21.6.8" type="device">
+<mxfile host="Electron" modified="2023-11-27T04:10:57.879Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="s2-uTCMsYU-6KIgOI3Zy" version="21.6.8" type="device">
   <diagram name="ページ1" id="qBk1WwCL-mOxupdm0j8o">
     <mxGraphModel dx="908" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
@@ -85,7 +85,7 @@
             <mxRectangle width="150" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_oOn3G8A1AW2U4IUEyCv-24" value="Work_records" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;strokeColor=default;" parent="1" vertex="1">
+        <mxCell id="_oOn3G8A1AW2U4IUEyCv-24" value="Work_items" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;strokeColor=default;" parent="1" vertex="1">
           <mxGeometry x="610" y="250" width="180" height="180" as="geometry" />
         </mxCell>
         <mxCell id="_oOn3G8A1AW2U4IUEyCv-25" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="_oOn3G8A1AW2U4IUEyCv-24" vertex="1">

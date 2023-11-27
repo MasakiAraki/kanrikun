@@ -16,7 +16,10 @@ html
           ul#nav-mobile.right.hide-on-med-and-down
             li
               - if user_signed_in?
-                = link_to 'ユーザー', user_path(current_user)
+                = link_to '作業実績', user_work_records_path(current_user)
+            li
+              - if user_signed_in?
+                = link_to 'プロフ', user_path(current_user)
             li
               - if user_signed_in?
                 = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
