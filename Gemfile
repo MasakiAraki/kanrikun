@@ -13,8 +13,6 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem 'bootsnap', require: false
 gem 'sass-rails'
-gem 'materialize-sass'
-gem 'material_icons'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'devise'
