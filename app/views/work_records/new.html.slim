@@ -1,0 +1,16 @@
+.container
+  h2 New Work Records
+  .row
+    = form_with model: [@user, @work_record],url: create_work_record_path(@user), local: true do |f|
+      .row
+        .input-field.col.s12
+          = f.label :date
+          = f.date_field :date, class: 'datepicker'
+      .row
+        .input-field.col.s12
+          = f.label :total_time
+          = f.number_field :total_time, class: 'validate'
+      .row
+        .actions
+          = f.submit 'Create Work Record', class: 'btn'
+          
