@@ -1,5 +1,5 @@
 doctype html
-html
+html data-theme="dark"
   head
     title
       | Kanrikun
@@ -10,20 +10,31 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = javascript_importmap_tags
   body
-    nav
-      .nav-wrapper
-        .container
-          = link_to "Logo", root_path, class: "brand-logo"
-          ul#nav-mobile.right.hide-on-med-and-down
-            li
-              - if user_signed_in?
+    .navbar.bg-base-100.accent
+      .flex-1
+        = link_to "Logo", root_path, class: "btn btn-ghost text-xl"
+      .flex-none
+        ul.menu.menu-horizontal.px-1
+          li
+            - if user_signed_in?
                 = link_to '作業実績', user_work_records_path(current_user)
-            li
-              - if user_signed_in?
+          li
+            - if user_signed_in?
                 = link_to 'プロフ', user_path(current_user)
-            li
-              - if user_signed_in?
-                = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
-              - else
-                = link_to 'ログイン', new_user_session_path
+          li
+            - if user_signed_in?
+              = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+            - else
+              = link_to 'ログイン', new_user_session_path
+          li
+            details
+              summary
+                | Parent
+              ul.p-2.bg-base-100.rounded-t-none
+                li
+                  a
+                    | Link 1
+                li
+                  a
+                    | Link 2
     = yield

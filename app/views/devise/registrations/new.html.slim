@@ -1,32 +1,39 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :first_name
-    br
-    = f.text_field :first_name, autofocus: true, autocomplete: "first name"
-  .field
-    = f.label :last_name
-    br
-    = f.text_field :last_name, autofocus: true, autocomplete: "last name"
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.container.mx-auto.px-4
+  h2.text-3xl.font-bold
+    | Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    div
+      .form-control.w-full.max-w-xs
+          label.label
+            span.label-text
+              = f.label :first_name
+          = f.text_field :first_name, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :last_name
+        = f.text_field :last_name, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :email
+        = f.text_field :email, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :password
+        - if @minimum_password_length
+          em
+            | (
+            = @minimum_password_length
+            |  characters minimum)
+        = f.password_field :password, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :password_confirmation
+        = f.password_field :password_confirmation, class: 'input input-bordered w-full max-w-xs'
+      .actions
+        = f.submit "Sign up", class: 'btn btn-primary'
+  = render "devise/shared/links"

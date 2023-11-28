@@ -1,11 +1,11 @@
-.container
-  h2 Users
+.container.mx-auto.px-4
+  h2.text-3xl.font-bold User Profile
   table
     tbody
       tr
-        td.bold Name
+        td.bold Name:
         td = full_name(@user)
       tr
-        td Email
+        td Email:
         td = @user.email
   

@@ -1,16 +1,16 @@
-.container
-  h2 New Work Records
-  .row
+.container.mx-auto.px-4
+  h2.text-3xl.font-bold New Work Records
+  div
     = form_with model: [@user, @work_record],url: create_work_record_path(@user), local: true do |f|
-      .row
-        .input-field.col.s12
-          = f.label :date
-          = f.date_field :date, class: 'datepicker'
-      .row
-        .input-field.col.s12
-          = f.label :total_time
-          = f.number_field :total_time, class: 'validate'
-      .row
-        .actions
-          = f.submit 'Create Work Record', class: 'btn'
-          
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :date
+        = f.date_field :date, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        label.label
+          span.label-text
+            = f.label :total_time
+        = f.number_field :total_time, class: 'input input-bordered w-full max-w-xs'
+      .form-control.w-full.max-w-xs
+        = f.submit 'Create Work Record', class: 'btn btn-primary'
