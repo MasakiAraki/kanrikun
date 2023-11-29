@@ -1,0 +1,40 @@
+doctype html
+html data-theme="dark"
+  head
+    title
+      | Kanrikun
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  body
+    .navbar.bg-base-100.accent
+      .flex-1
+        = link_to "Logo", root_path, class: "btn btn-ghost text-xl"
+      .flex-none
+        ul.menu.menu-horizontal.px-1
+          li
+            - if user_signed_in?
+                = link_to '作業実績', user_work_records_path(current_user)
+          li
+            - if user_signed_in?
+                = link_to 'プロフ', user_path(current_user)
+          li
+            - if user_signed_in?
+              = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }
+            - else
+              = link_to 'ログイン', new_user_session_path
+          li
+            details
+              summary
+                | Parent
+              ul.p-2.bg-base-100.rounded-t-none
+                li
+                  a
+                    | Link 1
+                li
+                  a
+                    | Link 2
+    = yield

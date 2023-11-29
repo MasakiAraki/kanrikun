@@ -1,0 +1,13 @@
+.container.mx-auto.px-4
+  h2.text-3xl.font-bold Work Records
+  table.table
+    thead
+      tr
+        th Date
+        th Total Time
+    tbody
+      - @work_records.each do |work_record|
+        tr
+          td = work_record.date
+          td = work_record.total_time
+  = link_to 'New Work Record', new_user_work_record_path(current_user), class: 'btn'
