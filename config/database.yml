@@ -3,7 +3,7 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: <%= ENV.fetch("MYSQL_ROOT_PASSWORD") %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD") %>
   host: <%= ENV.fetch('DATABASE_HOST') %>
 
 development:
@@ -16,6 +16,5 @@ test:
 
 production:
   <<: *default
-  database: kanrikun_production
-  username: kanrikun
-  password: <%= ENV["KANRIKUN_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode

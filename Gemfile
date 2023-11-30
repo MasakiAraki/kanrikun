@@ -4,7 +4,6 @@ ruby '3.1.2'
 
 gem 'rails', '~> 7.1.2'
 gem 'sprockets-rails'
-gem 'mysql2', '~> 0.5'
 gem 'puma', '>= 5.0'
 gem 'importmap-rails'
 gem 'turbo-rails'
@@ -20,6 +19,7 @@ gem 'devise'
 
 group :development, :test do
   gem 'debug', platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem 'mysql2', '~> 0.5'
 end
 
 group :development do
@@ -30,4 +30,8 @@ end
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'pg', '~> 1.5', '>= 1.5.4'
 end
