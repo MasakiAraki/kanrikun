@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This maigration is used to create the work records table.
 class CreateWorkRecords < ActiveRecord::Migration[7.1]
   def change
     create_table :work_records do |t|
