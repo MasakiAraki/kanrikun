@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This controller is used to manage work records.
 class WorkRecordsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
@@ -5,14 +8,14 @@ class WorkRecordsController < ApplicationController
   end
 
   def create
-    Rails.logger.info "クリエイトアクションが呼ばれました"
+    Rails.logger.info 'クリエイトアクションが呼ばれました'
     @user = current_user
     @work_record = @user.work_records.build(work_record_params)
     if @work_record.save
-      Rails.logger.info "ワークレコードが保存されました"
-      redirect_to user_work_records_path(@user), notice: "Work Record created successfully"
+      Rails.logger.info 'ワークレコードが保存されました'
+      redirect_to user_work_records_path(@user), notice: 'Work Record created successfully'
     else
-      Rails.logger.info "ワークレコードが保存されませんでした"
+      Rails.logger.info 'ワークレコードが保存されませんでした'
       render :new
     end
   end
