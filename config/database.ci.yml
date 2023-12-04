@@ -1,0 +1,8 @@
+test:
+  adapter: mysql2
+  encoding: utf8mb4
+  host: database
+  username: mysql
+  password: mysql
+  database: kanrikun_test
+  pool: 20
