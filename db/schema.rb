@@ -13,7 +13,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 # rubocop:disable Metrics/BlockLength
-ActiveRecord::Schema[7.1].define(version: 20_231_204_033_602) do
+ActiveRecord::Schema[7.1].define(version: 20_231_204_034_808) do
   create_table 'categories', charset: 'utf8mb3', force: :cascade do |t|
     t.bigint 'user_id', null: false
     t.string 'name', limit: 20, null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema[7.1].define(version: 20_231_204_033_602) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+  create_table 'work_items', charset: 'utf8mb3', force: :cascade do |t|
+    t.bigint 'work_record_id'
+    t.bigint 'category_id'
+    t.text 'description'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['category_id'], name: 'index_work_items_on_category_id'
+    t.index ['work_record_id'], name: 'index_work_items_on_work_record_id'
+  end
+
   create_table 'work_records', charset: 'utf8mb3', force: :cascade do |t|
     t.bigint 'user_id'
     t.datetime 'created_at', null: false
@@ -48,6 +58,8 @@ ActiveRecord::Schema[7.1].define(version: 20_231_204_033_602) do
   end
 
   add_foreign_key 'categories', 'users'
+  add_foreign_key 'work_items', 'categories'
+  add_foreign_key 'work_items', 'work_records'
   add_foreign_key 'work_records', 'users'
 end
 # rubocop:enable Metrics/BlockLength
