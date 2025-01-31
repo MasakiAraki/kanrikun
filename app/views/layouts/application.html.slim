@@ -17,9 +17,6 @@ html data-theme="dark"
         ul.menu.menu-horizontal.px-1
           li
             - if user_signed_in?
-                = link_to '作業実績', user_work_records_path(current_user)
-          li
-            - if user_signed_in?
                 = link_to 'プロフ', user_path(current_user)
           li
             - if user_signed_in?
