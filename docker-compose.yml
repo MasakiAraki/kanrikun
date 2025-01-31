@@ -4,7 +4,7 @@ services:
     ports:
       - '3001:3000'
     volumes:
-      - '.:/usr/src/kanrikun'
+      - '.:/usr/src/vinylize'
     env_file:
       - .env/development/web
       - .env/development/database

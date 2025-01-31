@@ -8,7 +8,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Kanrikun
+module Vinylize
   # This class is used to manage the application.
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

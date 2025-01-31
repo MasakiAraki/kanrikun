@@ -7,11 +7,11 @@ RUN apt-get update -yqq && apt-get install -yqq \
     fonts-takao
 RUN npm install -g yarn
 
-COPY Gemfile* /usr/src/kanrikun/
+COPY Gemfile* /usr/src/vinylize/
 
-WORKDIR /usr/src/kanrikun
+WORKDIR /usr/src/vinylize
 RUN bundle install
 
-COPY . /usr/src/kanrikun
+COPY . /usr/src/vinylize
 
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
